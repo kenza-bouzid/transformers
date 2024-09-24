@@ -48,7 +48,7 @@ jobs:
           build-args: |
             REF=main
           outputs: |
-            type=image,name=my_image,push=false
+            type=docker,name=my_image
 
       - name: Update clone
         run: |
