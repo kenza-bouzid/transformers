@@ -43,4 +43,9 @@ jobs:
           build-args: |
             REF=main
           type: local
-          dest: ./
+          dest: ./my_image
+
+      - name: Update clone
+        run: |
+          ls -l ./
+          ls -l ./my_image
