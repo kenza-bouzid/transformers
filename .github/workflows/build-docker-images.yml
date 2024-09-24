@@ -37,6 +37,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
       - name: Update clone
         run: |
+          sudo apt-get update && sudo apt-get install python3-pip
           python3 -m pip install docker-squash
           docker images
       -
