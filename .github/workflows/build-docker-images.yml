@@ -55,4 +55,5 @@ jobs:
           ls -l ./
           ls -l ./docker
           docker images
+          export PATH="/home/runner/.local/bin:$PATH"
           docker-squash -t my_image:squashed my_image:latest
