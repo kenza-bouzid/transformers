@@ -42,8 +42,8 @@ jobs:
           context: ./docker/transformers-all-latest-gpu
           build-args: |
             REF=main
-          type: local
-          dest: ./my_image
+          outputs: |
+            type=local,dest=./my_image
 
       - name: Update clone
         run: |
