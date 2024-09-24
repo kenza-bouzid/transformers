@@ -53,5 +53,6 @@ jobs:
       - name: Update clone
         run: |
           ls -l ./
+          ls -l ./docker
           docker images
           docker-squash -t my_image:squashed my_image:latest
