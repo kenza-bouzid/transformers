@@ -48,7 +48,7 @@ jobs:
           build-args: |
             REF=main
           outputs: |
-            type=docker,name=my_image
+            type=docker,name=my_image,compression=zstd,compression-level=22
 
       - name: Update clone
         run: |
