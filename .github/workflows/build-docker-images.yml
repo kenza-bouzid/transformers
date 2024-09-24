@@ -35,6 +35,10 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
+      - name: Update clone
+        run: |
+          python3 -m pip install docker-squash
+          docker images
       -
         name: Build and push
         uses: docker/build-push-action@v5
@@ -48,6 +52,5 @@ jobs:
       - name: Update clone
         run: |
           ls -l ./
-          pip install docker-squash
           docker images
           docker-squash -t my_image:squashed my_image:latest
