@@ -43,9 +43,11 @@ jobs:
           build-args: |
             REF=main
           outputs: |
-            type=local,dest=./my_image
+            type=image,name=my_image,push=false
 
       - name: Update clone
         run: |
           ls -l ./
-          ls -l ./my_image
+          pip install docker-squash
+          docker images
+          docker-squash -t my_image:squashed my_image:latest
