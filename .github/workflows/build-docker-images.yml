@@ -47,17 +47,15 @@ jobs:
           context: ./docker/transformers-all-latest-gpu
           build-args: |
             REF=main
-          push: true
-          tags: huggingface/transformers-all-latest-gpu-test
-#          outputs: |
-#            type=docker,name=my_image,compression=zstd,compression-level=22,force-compression=true
-#
-#      - name: Update clone
-#        run: |
-#          ls -l ./
-#          ls -l ./docker
-#          docker images
-#          export PATH="/home/runner/.local/bin:$PATH"
-#          docker-squash -t my_image:squashed my_image:latest --load-image
-#          docker-squash -t my_image:squashed2 my_image:squashed --load-image
-#          docker-squash -t my_image:squashed3 my_image:squashed2 --load-image
+#          push: true
+#          tags: huggingface/transformers-all-latest-gpu-test
+          outputs: |
+            type=docker,name=my_image
+
+      - name: Update clone
+        run: |
+          ls -l ./
+          ls -l ./docker
+          docker images
+          export PATH="/home/runner/.local/bin:$PATH"
+          docker-squash -t my_image:squashed my_image:latest --load-image
